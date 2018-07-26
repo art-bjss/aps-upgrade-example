@@ -1,0 +1,26 @@
+repositories {
+    maven {
+        url '<redacted>'
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = '1.8'
+}
+
+group = "scot.disclosure"
+
+apply plugin: 'java'
+
+dependencies {
+
+    compile "com.activiti:activiti-app-model:$alfrescoProcessServicesVersion"
+    compile "com.activiti:activiti-app-logic:$alfrescoProcessServicesVersion"
+
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-web:$springVersion"
+
+    compile "com.activiti:activiti-engine:$activitiVersion"
+
+}
